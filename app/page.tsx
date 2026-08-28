@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   ArrowDown,
   ArrowRight,
@@ -64,33 +65,26 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }} />
       <main id="accueil">
         <section className="hero-section">
+          <span className="hero-glyph" aria-hidden="true">R</span>
           <div className="hero-copy">
-            <p className="eyebrow">Cuisine fusion créole · Laval</p>
+            <p className="eyebrow eyebrow-light">Cuisine fusion créole · Laval</p>
             <h1>Saveurs créoles<br />au goût d&apos;ici.</h1>
             <p className="hero-intro">
               Une cuisine d&apos;inspiration haïtienne, généreuse et contemporaine, servie dans un lieu pensé pour se retrouver.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href="#menu" className="button-primary button-large">Découvrir le menu</a>
-              <a href="#commander" className="button-outline button-large">Commander</a>
+              <Link href="/menu" className="button-hero button-large">Découvrir le menu</Link>
+              <a href="#commander" className="button-hero-outline button-large">Commander</a>
             </div>
             <a href="#menu" className="hero-scroll">
               <ArrowDown aria-hidden="true" />
               Goûtez la différence
             </a>
           </div>
-          <div className="hero-visual">
-            <Image src="/images/racine/dish-6.jpg" alt="Assiette de poulet boucané, riz collé et bananes pesées de Racine Créole" fill priority sizes="(max-width: 768px) 100vw, 54vw" className="object-cover object-center" />
-            <div className="hero-stamp">
-              <span>Racines</span>
-              <strong>Haïtiennes</strong>
-              <span>Élan montréalais</span>
-            </div>
-          </div>
         </section>
 
         <section className="quick-bar" aria-label="Actions rapides">
-          <a href="#menu"><UtensilsCrossed aria-hidden="true" /><span>Voir le menu</span></a>
+          <Link href="/menu"><UtensilsCrossed aria-hidden="true" /><span>Voir le menu</span></Link>
           <a href="#commander"><ArrowRight aria-hidden="true" /><span>Commander</span></a>
           <a href={restaurant.phoneHref}><Phone aria-hidden="true" /><span>Appeler</span></a>
           <a href={restaurant.mapUrl} target="_blank" rel="noreferrer"><MapPin aria-hidden="true" /><span>Itinéraire</span></a>
