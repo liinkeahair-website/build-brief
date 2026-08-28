@@ -28,6 +28,10 @@ export const restaurant = {
       name: 'DoorDash',
       url: 'https://www.doordash.com/en-CA/fr-CA/store/racine-creole-laval-25694087/',
     },
+    {
+      name: 'Uber Eats',
+      url: 'https://www.ubereats.com/ca/search?q=Racine%20Creole',
+    },
   ],
   social: {
     instagram: 'https://www.instagram.com/racinecreole/',
