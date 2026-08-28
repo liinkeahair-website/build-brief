@@ -15,8 +15,8 @@ export async function POST(request: Request) {
   if (!parsed.success) return NextResponse.json({ error: 'Vérifiez les champs obligatoires.' }, { status: 400 })
   if (parsed.data.company) return NextResponse.json({ ok: true })
   const apiKey = process.env.RESEND_API_KEY
-  const to = process.env.INQUIRY_TO_EMAIL
-  if (!apiKey || !to) return NextResponse.json({ error: 'Le formulaire sera disponible dès que le service courriel sera configuré. Appelez-nous au 450-669-8699 entre-temps.' }, { status: 503 })
+  const to = process.env.INQUIRY_TO_EMAIL || 'racinecreoleresto@gmail.com'
+  if (!apiKey) return NextResponse.json({ error: 'Le formulaire sera disponible dès que le service courriel sera configuré. Appelez-nous au 450-669-8699 entre-temps.' }, { status: 503 })
   const resend = new Resend(apiKey)
   const { name, email, phone, type, date, guestCount, message } = parsed.data
   const { error } = await resend.emails.send({ from: 'Racine Créole <onboarding@resend.dev>', to, replyTo: email, subject: `Nouvelle demande ${type} — ${name}`, text: `Nom: ${name}\nCourriel: ${email}\nTéléphone: ${phone}\nType: ${type}\nDate: ${date || 'Non précisée'}\nPersonnes: ${guestCount || 'Non précisé'}\n\n${message}` })
