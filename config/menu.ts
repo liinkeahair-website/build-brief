@@ -1,7 +1,8 @@
 export type MenuItem = { name: string; description?: string; price?: string; note?: string }
 export type MenuSection = { id: string; title: string; subtitle?: string; items: MenuItem[] }
 
-// Transcribed from the official Racine Créole menu PDFs. Keep this file as the single source of truth.
+// Transcribed verbatim from the official Racine Créole menu PDFs. This file is the single source of truth.
+// Do NOT add items that are not printed on the official menu.
 // Single-price items use `price` (rendered with a "$" suffix). Items with size/format variants
 // keep the per-format pricing in `description` and leave `price` empty.
 export const menuSections: MenuSection[] = [
@@ -14,11 +15,9 @@ export const menuSections: MenuSection[] = [
     { name: 'Côtes levées', description: '(demi) 12,99 $ · (entière) 21,99 $' },
     { name: 'Cuisse de poulet (1)', price: '9,49' },
     { name: 'Dinde', price: '10,99' },
-    { name: 'Frites', description: '(P) 4,99 $ · (G) 8,99 $' },
     { name: 'Griot', price: '8,49' },
     { name: 'Légumes', price: '9,99' },
     { name: 'Marinades (3)', price: '3,50' },
-    { name: 'Pâté haïtien', description: '(1) 2,49 $ · (12) 24,99 $' },
     { name: 'Poisson', price: '11,99' },
     { name: 'Poitrine de poulet', price: '10,49' },
     { name: 'Queue de bœuf', price: '12,99' },
@@ -31,7 +30,7 @@ export const menuSections: MenuSection[] = [
   ]},
   { id: 'salades', title: 'Salades', items: [
     { name: 'Salade macaroni', description: '(P) 4,99 $ · (M) 7,99 $ · (G) 11,99 $' },
-    { name: 'Salade maison', description: '(P) 4,99 $ · (M) 7,99 $ · (G) 9,99 $' },
+    { name: 'Salade maison', price: '9,99' },
     { name: 'Salade poitrine de poulet', price: '19,99' },
   ]},
   { id: 'fritay', title: 'Fritay', subtitle: 'Servi avec bananes plantain. Ajoutez marinades et accras au choix.', items: [
@@ -83,13 +82,12 @@ export const menuSections: MenuSection[] = [
     { name: 'Légume mariné', price: '2,75' },
   ]},
   { id: 'desserts', title: 'Desserts', items: [
-    { name: 'Dessert du jour', description: 'Sélection maison', price: '9,99' },
+    { name: 'Desserts', price: '9,99' },
   ]},
   { id: 'boissons', title: 'Boissons', items: [
     { name: 'Eau (bouteille)', price: '1,99' },
     { name: 'Boissons gazeuses (canette)', description: 'Coke, Coke Zero, 7up, Sprite, Canada Dry, Ginger Ale, soda tonique, Crush Orange', price: '1,99' },
-    { name: 'Cola Champagne / Banane', price: '1,99' },
-    { name: 'Boissons gazeuses importées', price: '2,49' },
+    { name: 'Boissons gazeuses importées', description: 'Cola Champagne, banane', price: '2,49' },
     { name: 'Jus maison', price: '2,49' },
     { name: 'Jus importés', description: 'Mangue, mangue-carotte, corossol, goyave, punch aux fruits, fruit de la passion', price: '3,49' },
     { name: 'Malta', price: '3,99' },
@@ -101,12 +99,12 @@ export const menuSections: MenuSection[] = [
     { name: 'Vin blanc', description: 'Verre 10,49 $ · Bouteille 44,99 $' },
   ]},
   { id: 'spiritueux', title: 'Spiritueux & cocktails', items: [
-    { name: 'Rhum Barbancourt', description: 'Verre 7,99 $ · Bouteille 8,99 $' },
-    { name: 'Grand Marnier', description: 'Verre 7,99 $ · Bouteille 8,99 $' },
-    { name: 'Jameson Whiskey', price: '7,99' },
-    { name: '1800 Tequila', note: 'Sur demande' },
-    { name: 'Bombay Gin', note: 'Sur demande' },
-    { name: 'Grey Goose Vodka', note: 'Sur demande' },
+    { name: '1800 Tequila', description: 'Verre 8,99 $ · Bouteille sur demande' },
+    { name: 'Rhum Barbancourt', description: 'Verre 7,99 $ · Bouteille sur demande' },
+    { name: 'Bombay Gin', description: 'Verre 7,99 $ · Bouteille sur demande' },
+    { name: 'Grey Goose Vodka', description: 'Verre 8,99 $ · Bouteille sur demande' },
+    { name: 'Jameson Whiskey', description: 'Verre 7,99 $ · Bouteille sur demande' },
+    { name: 'Grand Marnier', description: 'Verre 7,99 $ · Bouteille sur demande' },
     { name: 'Cocktail maison', price: '12,99' },
     { name: 'Cocktail maison (pichet)', note: 'Sur demande' },
     { name: 'Mocktail maison', price: '6,99' },
