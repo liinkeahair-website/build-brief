@@ -1,4 +1,5 @@
-export type MenuItem = { name: string; description?: string; price?: string; note?: string }
+export type MenuVariant = { label: string; price: string }
+export type MenuItem = { name: string; description?: string; price?: string; note?: string; variants?: MenuVariant[] }
 export type MenuSection = { id: string; title: string; subtitle?: string; items: MenuItem[] }
 
 // Transcribed verbatim from the official Racine Créole menu PDFs. This file is the single source of truth.
@@ -33,14 +34,47 @@ export const menuSections: MenuSection[] = [
     { name: 'Salade maison', price: '9,99' },
     { name: 'Salade poitrine de poulet', price: '19,99' },
   ]},
-  { id: 'fritay', title: 'Fritay', subtitle: 'Servi avec bananes plantain. Ajoutez marinades et accras au choix.', items: [
-    { name: 'Fritay ailes de poulet', description: 'Ailes (3) + plantain (6) 14,99 $ · + marinades 16,99 $ · + accras 17,99 $ · + accras + marinades 21,99 $' },
-    { name: 'Fritay cuisse de poulet', description: 'Cuisse (1) + plantain (6) 16,99 $ · + marinades 19,99 $ · + accras 20,99 $ · + accras + marinades 23,99 $' },
-    { name: 'Fritay griot', description: 'Griot + plantain (6) 16,99 $ · + marinades 18,99 $ · + accras 19,99 $ · + accras + marinades 22,99 $' },
-    { name: 'Fritay dinde', description: 'Dinde + plantain (6) 17,99 $ · + marinades 20,99 $ · + accras 21,99 $ · + accras + marinades 25,99 $' },
-    { name: 'Fritay tassot bœuf', description: 'Tassot bœuf + plantain (6) 22,49 $ · + marinades 24,99 $ · + accras 25,99 $ · + accras + marinades 29,99 $' },
-    { name: 'Fritay tassot cabrit', description: 'Tassot cabrit + plantain (6) 22,49 $ · + marinades 24,99 $ · + accras 25,99 $ · + accras + marinades 29,99 $' },
-    { name: 'Fritay poisson', description: 'Poisson + plantain (6) + accras (3) + marinades (3) — (M) 29,99 $ · (G) 39,99 $' },
+  { id: 'fritay', title: 'Fritay', subtitle: 'Chaque fritay est servi avec 6 bananes plantain. Bonifiez avec marinades (3) et accras (3).', items: [
+    { name: 'Ailes de poulet (3)', variants: [
+      { label: 'Classique', price: '14,99' },
+      { label: '+ Marinades', price: '16,99' },
+      { label: '+ Accras', price: '17,99' },
+      { label: '+ Accras + marinades', price: '21,99' },
+    ]},
+    { name: 'Cuisse de poulet (1)', variants: [
+      { label: 'Classique', price: '16,99' },
+      { label: '+ Marinades', price: '19,99' },
+      { label: '+ Accras', price: '20,99' },
+      { label: '+ Accras + marinades', price: '23,99' },
+    ]},
+    { name: 'Griot', variants: [
+      { label: 'Classique', price: '16,99' },
+      { label: '+ Marinades', price: '18,99' },
+      { label: '+ Accras', price: '19,99' },
+      { label: '+ Accras + marinades', price: '22,99' },
+    ]},
+    { name: 'Dinde', variants: [
+      { label: 'Classique', price: '17,99' },
+      { label: '+ Marinades', price: '20,99' },
+      { label: '+ Accras', price: '21,99' },
+      { label: '+ Accras + marinades', price: '25,99' },
+    ]},
+    { name: 'Tassot bœuf', variants: [
+      { label: 'Classique', price: '22,49' },
+      { label: '+ Marinades', price: '24,99' },
+      { label: '+ Accras', price: '25,99' },
+      { label: '+ Accras + marinades', price: '29,99' },
+    ]},
+    { name: 'Tassot cabrit', variants: [
+      { label: 'Classique', price: '22,49' },
+      { label: '+ Marinades', price: '24,99' },
+      { label: '+ Accras', price: '25,99' },
+      { label: '+ Accras + marinades', price: '29,99' },
+    ]},
+    { name: 'Poisson', description: 'Servi avec accras (3) et marinades (3)', variants: [
+      { label: 'Moyen', price: '29,99' },
+      { label: 'Grand', price: '39,99' },
+    ]},
   ]},
   { id: 'plats', title: 'Plats individuels', subtitle: 'Servis avec 2 bananes plantain, salade macaroni, riz et une sauce. Pikliz inclus avec le griot, la dinde, le tassot cabrit et le tassot bœuf.', items: [
     { name: 'Plat ailes de poulet', description: '(6) 17,99 $ · (12) 29,99 $' },

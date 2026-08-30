@@ -19,7 +19,7 @@ export default function MenuPage() {
             <h2 className="font-serif text-2xl leading-tight md:text-3xl">{section.title}</h2>
             {section.subtitle && <p className="mt-1.5 max-w-2xl text-xs leading-5 text-muted-foreground md:text-sm">{section.subtitle}</p>}
           </div>
-          <ul className="grid gap-x-10 md:grid-cols-2">{section.items.map(item => <li key={item.name} className="border-b border-border/60 py-2.5 last:border-b-0">
+          <ul className="grid gap-x-10 md:grid-cols-2">{section.items.map(item => <li key={item.name} className="border-b border-border/60 py-2.5 last:border-b-0 md:[&:nth-last-child(2):nth-child(odd)]:border-b-0">
             <div className="flex items-baseline gap-3">
               <h3 className="font-medium leading-snug">{item.name}</h3>
               <span className="mx-1 hidden h-px flex-1 translate-y-[-2px] border-b border-dotted border-border sm:block" aria-hidden="true" />
@@ -27,6 +27,11 @@ export default function MenuPage() {
               {item.note && !item.price && <span className="ml-auto text-xs font-semibold uppercase tracking-wide text-primary sm:ml-0">{item.note}</span>}
             </div>
             {item.description && <p className="mt-0.5 text-xs leading-5 text-muted-foreground">{item.description}</p>}
+            {item.variants && <ul className="mt-1.5 flex flex-col gap-1 border-l-2 border-primary/25 pl-3">{item.variants.map(v => <li key={v.label} className="flex items-baseline gap-2 text-sm">
+              <span className="text-muted-foreground">{v.label}</span>
+              <span className="mx-1 hidden h-px flex-1 translate-y-[-2px] border-b border-dotted border-border/70 sm:block" aria-hidden="true" />
+              <span className="ml-auto font-mono text-[13px] font-semibold tabular-nums sm:ml-0">{v.price} $</span>
+            </li>)}</ul>}
           </li>)}</ul>
         </section>)}
       </div>
