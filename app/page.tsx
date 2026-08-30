@@ -84,11 +84,7 @@ export default function Page() {
           <div className="hero-plate">
             <div className="hero-plate-ring" aria-hidden="true" />
             <div className="hero-plate-photo">
-              <Image src="/images/racine/dish-6.jpg" alt="Assiette signature de Racine Créole avec poulet boucané, riz collé et bananes pesées" fill priority sizes="(max-width: 768px) 260px, 420px" className="object-cover" />
-            </div>
-            <div className="hero-plate-tag">
-              <span>Fait maison</span>
-              <strong>Poulet boucané & riz collé</strong>
+              <Image src="/images/racine/dish-6.jpg" alt="Assiette signature de Racine Créole avec poulet boucané, riz collé et bananes pesées" fill priority sizes="(max-width: 768px) 300px, 460px" className="object-cover" />
             </div>
           </div>
         </section>

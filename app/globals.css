@@ -89,11 +89,8 @@
 .hero-scroll { @apply mt-14 flex min-h-11 items-center gap-3 self-start text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground/60 transition-colors hover:text-secondary; }
 .hero-scroll svg { @apply size-4; }
 .hero-plate { @apply relative z-10 order-1 flex w-full shrink-0 items-center justify-center py-2 md:order-2 md:w-auto md:py-0; }
-.hero-plate-ring { @apply pointer-events-none absolute inset-0 -m-6 rounded-full border border-dashed border-primary-foreground/25 md:-m-8; animation: hero-spin 46s linear infinite; }
-.hero-plate-photo { @apply relative size-56 overflow-hidden rounded-full shadow-2xl ring-4 ring-primary-foreground/15 sm:size-72 md:size-80 lg:size-96; }
-.hero-plate-tag { @apply absolute -bottom-3 left-1/2 flex -translate-x-1/2 flex-col items-center gap-0.5 rounded-full bg-secondary px-5 py-2.5 text-center shadow-lg md:-bottom-1 md:left-auto md:right-0 md:translate-x-6 md:items-start md:text-left; }
-.hero-plate-tag span { @apply text-[10px] font-bold uppercase tracking-widest text-secondary-foreground/70; }
-.hero-plate-tag strong { @apply max-w-[10rem] font-serif text-sm leading-tight text-secondary-foreground md:text-base; }
+.hero-plate-ring { @apply pointer-events-none absolute inset-0 -m-7 rounded-full border border-dashed border-secondary/50 md:-m-9; animation: hero-spin 46s linear infinite; }
+.hero-plate-photo { @apply relative size-64 overflow-hidden rounded-full shadow-2xl ring-4 ring-primary-foreground/15 sm:size-80 md:size-[26rem] lg:size-[30rem]; }
 
 @keyframes hero-spin { to { transform: rotate(360deg); } }
 .button-hero { @apply inline-flex min-h-11 items-center justify-center rounded-full bg-secondary px-5 py-2 text-sm font-bold text-secondary-foreground transition-colors hover:bg-background hover:text-foreground; }
