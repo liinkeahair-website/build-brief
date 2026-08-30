@@ -80,14 +80,22 @@
   .button-primary svg, .button-outline svg { @apply size-4; }
 }
 
-.hero-section { @apply relative isolate mx-auto flex min-h-[calc(100svh-4rem)] max-w-[1600px] flex-col justify-center overflow-hidden bg-primary px-5 py-20 text-primary-foreground md:min-h-[680px] md:px-16 md:py-28; }
+.hero-section { @apply relative isolate mx-auto flex max-w-[1600px] flex-col items-center gap-12 overflow-hidden bg-primary px-5 py-16 text-primary-foreground md:min-h-[680px] md:flex-row md:items-center md:justify-between md:gap-10 md:px-16 md:py-24; }
 .hero-glyph { @apply pointer-events-none absolute -right-16 -top-24 select-none font-serif text-[26rem] leading-none text-primary-foreground/[0.06] md:-right-10 md:text-[42rem]; }
-.hero-copy { @apply relative z-10 flex flex-col; }
+.hero-copy { @apply relative z-10 order-2 flex w-full flex-col md:order-1 md:max-w-xl; }
 .hero-copy h1 { @apply max-w-[14ch] text-balance font-serif text-6xl font-semibold leading-[0.92] tracking-[-0.04em] sm:text-7xl lg:text-8xl xl:text-9xl; }
 .hero-intro { @apply mt-8 max-w-xl text-pretty text-lg leading-relaxed text-primary-foreground/75; }
 .hero-copy .flex { @apply mt-10; }
 .hero-scroll { @apply mt-14 flex min-h-11 items-center gap-3 self-start text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground/60 transition-colors hover:text-secondary; }
 .hero-scroll svg { @apply size-4; }
+.hero-plate { @apply relative z-10 order-1 flex w-full shrink-0 items-center justify-center py-2 md:order-2 md:w-auto md:py-0; }
+.hero-plate-ring { @apply pointer-events-none absolute inset-0 -m-6 rounded-full border border-dashed border-primary-foreground/25 md:-m-8; animation: hero-spin 46s linear infinite; }
+.hero-plate-photo { @apply relative size-56 overflow-hidden rounded-full shadow-2xl ring-4 ring-primary-foreground/15 sm:size-72 md:size-80 lg:size-96; }
+.hero-plate-tag { @apply absolute -bottom-3 left-1/2 flex -translate-x-1/2 flex-col items-center gap-0.5 rounded-full bg-secondary px-5 py-2.5 text-center shadow-lg md:-bottom-1 md:left-auto md:right-0 md:translate-x-6 md:items-start md:text-left; }
+.hero-plate-tag span { @apply text-[10px] font-bold uppercase tracking-widest text-secondary-foreground/70; }
+.hero-plate-tag strong { @apply max-w-[10rem] font-serif text-sm leading-tight text-secondary-foreground md:text-base; }
+
+@keyframes hero-spin { to { transform: rotate(360deg); } }
 .button-hero { @apply inline-flex min-h-11 items-center justify-center rounded-full bg-secondary px-5 py-2 text-sm font-bold text-secondary-foreground transition-colors hover:bg-background hover:text-foreground; }
 .button-hero-outline { @apply inline-flex min-h-11 items-center justify-center rounded-full border border-primary-foreground/40 px-5 py-2 text-sm font-bold text-primary-foreground transition-colors hover:border-primary-foreground hover:bg-primary-foreground hover:text-primary; }
 .button-hero svg, .button-hero-outline svg { @apply size-4; }
@@ -149,4 +157,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+  .hero-plate-ring { animation: none; }
 }
