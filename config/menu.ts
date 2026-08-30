@@ -35,43 +35,43 @@ export const menuSections: MenuSection[] = [
     { name: 'Salade poitrine de poulet', price: '19,99' },
   ]},
   { id: 'fritay', title: 'Fritay', subtitle: 'Chaque fritay est servi avec 6 bananes plantain. Bonifiez avec marinades (3) et accras (3).', items: [
-    { name: 'Ailes de poulet (3)', variants: [
+    { name: 'Ailes de poulet (3)', description: 'Servi avec 6 bananes plantain', variants: [
       { label: 'Classique', price: '14,99' },
       { label: '+ Marinades', price: '16,99' },
       { label: '+ Accras', price: '17,99' },
       { label: '+ Accras + marinades', price: '21,99' },
     ]},
-    { name: 'Cuisse de poulet (1)', variants: [
+    { name: 'Cuisse de poulet (1)', description: 'Servi avec 6 bananes plantain', variants: [
       { label: 'Classique', price: '16,99' },
       { label: '+ Marinades', price: '19,99' },
       { label: '+ Accras', price: '20,99' },
       { label: '+ Accras + marinades', price: '23,99' },
     ]},
-    { name: 'Griot', variants: [
+    { name: 'Griot', description: 'Servi avec 6 bananes plantain', variants: [
       { label: 'Classique', price: '16,99' },
       { label: '+ Marinades', price: '18,99' },
       { label: '+ Accras', price: '19,99' },
       { label: '+ Accras + marinades', price: '22,99' },
     ]},
-    { name: 'Dinde', variants: [
+    { name: 'Dinde', description: 'Servi avec 6 bananes plantain', variants: [
       { label: 'Classique', price: '17,99' },
       { label: '+ Marinades', price: '20,99' },
       { label: '+ Accras', price: '21,99' },
       { label: '+ Accras + marinades', price: '25,99' },
     ]},
-    { name: 'Tassot bœuf', variants: [
+    { name: 'Tassot bœuf', description: 'Servi avec 6 bananes plantain', variants: [
       { label: 'Classique', price: '22,49' },
       { label: '+ Marinades', price: '24,99' },
       { label: '+ Accras', price: '25,99' },
       { label: '+ Accras + marinades', price: '29,99' },
     ]},
-    { name: 'Tassot cabrit', variants: [
+    { name: 'Tassot cabrit', description: 'Servi avec 6 bananes plantain', variants: [
       { label: 'Classique', price: '22,49' },
       { label: '+ Marinades', price: '24,99' },
       { label: '+ Accras', price: '25,99' },
       { label: '+ Accras + marinades', price: '29,99' },
     ]},
-    { name: 'Poisson', description: 'Servi avec accras (3) et marinades (3)', variants: [
+    { name: 'Poisson', description: 'Servi avec 6 bananes plantain, accras (3) et marinades (3)', variants: [
       { label: 'Moyen', price: '29,99' },
       { label: 'Grand', price: '39,99' },
     ]},
