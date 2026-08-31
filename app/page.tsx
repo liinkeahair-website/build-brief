@@ -65,6 +65,9 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }} />
       <main id="accueil">
         <section className="hero-section">
+          <div className="hero-bg" aria-hidden="true">
+            <Image src="/images/racine/hero-spread.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
+          </div>
           <span className="hero-glyph" aria-hidden="true">R</span>
           <div className="hero-copy">
             <p className="eyebrow eyebrow-light">Cuisine fusion créole · Laval</p>
@@ -80,12 +83,6 @@ export default function Page() {
               <ArrowDown aria-hidden="true" />
               Goûtez la différence
             </a>
-          </div>
-          <div className="hero-plate">
-            <div className="hero-plate-ring" aria-hidden="true" />
-            <div className="hero-plate-photo">
-              <Image src="/images/racine/dish-6.jpg" alt="Assiette signature de Racine Créole avec poulet boucané, riz collé et bananes pesées" fill priority sizes="(max-width: 768px) 300px, 460px" className="object-cover" />
-            </div>
           </div>
         </section>
 
