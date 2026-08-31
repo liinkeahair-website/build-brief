@@ -30,9 +30,13 @@ export const metadata: Metadata = {
     description: 'Cuisine fusion créole à Laval, inspirée d’Haïti et pensée pour se retrouver.',
     type: 'website',
     locale: 'fr_CA',
-    images: [{ url: '/images/racine/dish-2.jpg', width: 1600, height: 1600, alt: 'Une assiette signée Racine Créole' }],
+    siteName: 'Racine Créole',
   },
-  icons: { icon: '/icon.svg', apple: '/apple-icon.png' },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Racine Créole | Saveurs créoles au goût d’ici',
+    description: 'Cuisine fusion créole à Laval, inspirée d’Haïti et pensée pour se retrouver.',
+  },
 }
 
 export const viewport: Viewport = {
