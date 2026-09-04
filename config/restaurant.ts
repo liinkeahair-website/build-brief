@@ -9,7 +9,7 @@ export const restaurant = {
   },
   phone: '450-669-8699',
   phoneHref: 'tel:+14506698699',
-  email: 'racinecreoleresto@gmail.com',
+  email: 'info.racinecreole@gmail.com',
   mapUrl:
     'https://www.google.com/maps/dir/?api=1&destination=4721+Boulevard+des+Laurentides+Laval+QC+H7K+3G4',
   parking: 'Stationnement gratuit',
