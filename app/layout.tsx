@@ -4,6 +4,7 @@ import { Cormorant_Garamond, Manrope } from 'next/font/google'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 import { SitePreloader } from '@/components/site-preloader'
+import { DeactivationNotice } from '@/components/deactivation-notice'
 import './globals.css'
 
 const display = Cormorant_Garamond({
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="fr-CA" className={`bg-background ${display.variable} ${body.variable}`}>
       <body className="font-sans antialiased">
         <SitePreloader />
+        <DeactivationNotice />
         <SiteHeader />
         {children}
         <SiteFooter />
