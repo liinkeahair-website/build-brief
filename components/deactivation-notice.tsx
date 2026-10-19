@@ -20,7 +20,7 @@ export function DeactivationNotice() {
         <p className="deactivation-copy">
           This website is temporarily unavailable. Please contact the administrator to reactivate it.
         </p>
-        <a className="deactivation-contact" href="mailto:info.racinecreole@gmail.com">
+        <a className="deactivation-contact" href="mailto:digitalsesma@gmail.com">
           Contact admin
         </a>
       </div>
