@@ -165,14 +165,6 @@
 @keyframes preloader-spin { to { transform: rotate(360deg); } }
 @keyframes preloader-letter { from { opacity: 0; transform: translateY(0.6em); } to { opacity: 1; transform: translateY(0); } }
 
-.deactivation-notice { @apply fixed inset-0 z-[90] flex items-center justify-center overflow-y-auto bg-primary/95 px-5 py-8 text-primary-foreground backdrop-blur-md; }
-.deactivation-card { @apply w-full max-w-md rounded-2xl border border-primary-foreground/20 bg-primary px-6 py-10 text-center shadow-2xl sm:px-10; }
-.deactivation-mark { @apply mx-auto flex size-16 items-center justify-center rounded-full border border-secondary/70 font-serif text-4xl text-secondary; }
-.deactivation-kicker { @apply mt-5 text-xs font-bold uppercase tracking-[0.28em] text-secondary; }
-.deactivation-card h1 { @apply mt-4 font-serif text-4xl leading-tight sm:text-5xl; }
-.deactivation-copy { @apply mx-auto mt-4 max-w-sm text-sm leading-6 text-primary-foreground/75; }
-.deactivation-contact { @apply mt-7 inline-flex min-h-11 items-center justify-center rounded-full bg-secondary px-6 py-3 text-sm font-bold text-secondary-foreground transition-colors hover:bg-background hover:text-foreground; }
-
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
   .preloader-ring { animation-duration: 1.4s; }
