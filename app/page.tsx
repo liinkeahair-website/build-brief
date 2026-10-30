@@ -10,6 +10,7 @@ import {
   UtensilsCrossed,
 } from 'lucide-react'
 import { fullAddress, restaurant } from '@/config/restaurant'
+import { HalloweenDeco } from '@/components/halloween-deco'
 
 const featuredDishes = [
   {
@@ -69,6 +70,7 @@ export default function Page() {
             <Image src="/images/racine/hero-spread.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
           </div>
           <span className="hero-glyph" aria-hidden="true">R</span>
+          <HalloweenDeco />
           <div className="hero-copy">
             <p className="eyebrow eyebrow-light">Cuisine fusion créole · Laval</p>
             <h1>Saveurs créoles<br />au goût d&apos;ici.</h1>
