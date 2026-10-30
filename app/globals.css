@@ -86,6 +86,11 @@
 @media (min-width: 768px) { .hero-bg img { object-position: right center; } }
 .hero-bg::after { content: ''; @apply absolute inset-0 bg-primary/85 md:bg-gradient-to-r md:from-primary md:via-primary/90 md:to-primary/60; }
 .hero-glyph { @apply pointer-events-none absolute -right-16 -top-24 z-0 select-none font-serif text-[26rem] leading-none text-primary-foreground/[0.07] md:-right-10 md:text-[42rem]; }
+.halloween-deco { display: contents; }
+.halloween-item { @apply pointer-events-none absolute; mix-blend-mode: screen; -webkit-mask-image: radial-gradient(closest-side, #000 62%, transparent 100%); mask-image: radial-gradient(closest-side, #000 62%, transparent 100%); }
+.halloween-pumpkin { @apply bottom-3 right-2 size-28 opacity-90 md:bottom-10 md:right-16 md:size-60; animation: halloween-float 6s ease-in-out infinite; }
+.halloween-ghost { @apply right-3 top-4 size-20 opacity-80 md:right-[26%] md:top-20 md:size-36; animation: halloween-float 5s ease-in-out -2s infinite; }
+.halloween-bat { @apply right-[34%] top-2 h-12 w-24 opacity-80 md:right-[10%] md:top-10 md:h-20 md:w-40; filter: brightness(1.9) saturate(1.2); animation: halloween-flutter 4s ease-in-out infinite; }
 .hero-copy { @apply relative z-10 flex flex-col; }
 .hero-copy h1 { @apply max-w-[14ch] text-balance font-serif text-6xl font-semibold leading-[0.92] tracking-[-0.04em] sm:text-7xl lg:text-8xl xl:text-9xl; }
 .hero-intro { @apply mt-8 max-w-xl text-pretty text-lg leading-relaxed text-primary-foreground/80; }
@@ -159,6 +164,8 @@
 .preloader-word { @apply flex overflow-hidden font-serif text-lg uppercase tracking-[0.35em] text-primary-foreground/80; }
 .preloader-word span { display: inline-block; animation: preloader-letter 0.5s ease both; }
 
+@keyframes halloween-float { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-12px) rotate(3deg); } }
+@keyframes halloween-flutter { 0%, 100% { transform: translate(0, 0) rotate(-4deg); } 50% { transform: translate(-10px, 8px) rotate(4deg); } }
 @keyframes preloader-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes preloader-out { to { opacity: 0; visibility: hidden; transform: scale(1.04); } }
 @keyframes preloader-pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: scale(1); } }
@@ -168,5 +175,6 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
   .preloader-ring { animation-duration: 1.4s; }
+  .halloween-item { animation: none; }
   .preloader-glyph, .preloader-word span { animation: none; opacity: 1; transform: none; }
 }
