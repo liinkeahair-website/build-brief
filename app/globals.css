@@ -80,22 +80,20 @@
   .button-primary svg, .button-outline svg { @apply size-4; }
 }
 
-.hero-section { @apply relative isolate mx-auto flex min-h-[calc(100svh-4rem)] max-w-[1600px] flex-col justify-center overflow-hidden bg-primary px-5 py-20 text-primary-foreground md:min-h-[680px] md:px-16 md:py-28; }
-.hero-bg { @apply absolute inset-0 -z-10 bg-primary; }
-.hero-bg img { object-position: center; }
-@media (min-width: 768px) { .hero-bg img { object-position: right center; } }
-.hero-bg::after { content: ''; @apply absolute inset-0 bg-primary/85 md:bg-gradient-to-r md:from-primary md:via-primary/90 md:to-primary/60; }
-.hero-glyph { @apply pointer-events-none absolute -right-16 -top-24 z-0 select-none font-serif text-[26rem] leading-none text-primary-foreground/[0.07] md:-right-10 md:text-[42rem]; }
+  .hero-section { @apply relative isolate flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center overflow-hidden bg-foreground px-5 py-24 text-center text-primary-foreground md:min-h-[760px] md:px-16 md:py-32; }
+.hero-bg { @apply absolute inset-0 -z-10 bg-foreground; }
+.hero-slide { @apply absolute inset-0 opacity-0; animation: hero-slide 24s linear infinite; animation-delay: calc(var(--i) * 6s - 1.44s); will-change: opacity, transform; }
+.hero-bg::after { content: ''; @apply absolute inset-0; background: radial-gradient(ellipse at center, oklch(0.14 0.03 151 / 0.6) 0%, oklch(0.11 0.03 151 / 0.86) 100%); }
 .halloween-deco { display: contents; }
-.halloween-item { @apply pointer-events-none absolute; mix-blend-mode: screen; -webkit-mask-image: radial-gradient(closest-side, #000 62%, transparent 100%); mask-image: radial-gradient(closest-side, #000 62%, transparent 100%); }
-.halloween-pumpkin { @apply bottom-3 right-2 size-28 opacity-90 md:bottom-10 md:right-16 md:size-60; animation: halloween-float 6s ease-in-out infinite; }
-.halloween-ghost { @apply right-3 top-4 size-20 opacity-80 md:right-[26%] md:top-20 md:size-36; animation: halloween-float 5s ease-in-out -2s infinite; }
-.halloween-bat { @apply right-[34%] top-2 h-12 w-24 opacity-80 md:right-[10%] md:top-10 md:h-20 md:w-40; filter: brightness(1.9) saturate(1.2); animation: halloween-flutter 4s ease-in-out infinite; }
-.hero-copy { @apply relative z-10 flex flex-col; }
-.hero-copy h1 { @apply max-w-[14ch] text-balance font-serif text-6xl font-semibold leading-[0.92] tracking-[-0.04em] sm:text-7xl lg:text-8xl xl:text-9xl; }
-.hero-intro { @apply mt-8 max-w-xl text-pretty text-lg leading-relaxed text-primary-foreground/80; }
-.hero-copy .flex { @apply mt-10; }
-.hero-scroll { @apply mt-14 flex min-h-11 items-center gap-3 self-start text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground/70 transition-colors hover:text-secondary; }
+.halloween-item { @apply pointer-events-none absolute z-[1]; mix-blend-mode: screen; -webkit-mask-image: radial-gradient(closest-side, #000 62%, transparent 100%); mask-image: radial-gradient(closest-side, #000 62%, transparent 100%); }
+.halloween-pumpkin { @apply -bottom-2 -left-4 size-28 opacity-95 md:bottom-4 md:left-8 md:size-64; animation: halloween-float 6s ease-in-out infinite; }
+.halloween-ghost { @apply -right-3 top-6 size-24 opacity-85 md:right-[7%] md:top-16 md:size-44; animation: halloween-float 5s ease-in-out -2s infinite; }
+.halloween-bat { @apply -left-3 top-4 h-14 w-28 opacity-85 md:left-[9%] md:top-14 md:h-24 md:w-48; filter: brightness(1.9) saturate(1.2); animation: halloween-flutter 4s ease-in-out infinite; }
+.hero-copy { @apply relative z-10 flex flex-col items-center; }
+.hero-copy h1 { @apply max-w-[14ch] text-balance font-serif text-6xl font-semibold leading-[0.92] tracking-[-0.04em] sm:text-7xl lg:text-8xl; }
+.hero-intro { @apply mx-auto mt-8 max-w-xl text-pretty text-lg leading-relaxed text-primary-foreground/80; }
+.hero-copy .flex { @apply mt-10 justify-center; }
+.hero-scroll { @apply mt-14 flex min-h-11 items-center gap-3 self-center text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground/70 transition-colors hover:text-secondary; }
 .hero-scroll svg { @apply size-4; }
 .button-hero { @apply inline-flex min-h-11 items-center justify-center rounded-full bg-secondary px-5 py-2 text-sm font-bold text-secondary-foreground transition-colors hover:bg-background hover:text-foreground; }
 .button-hero-outline { @apply inline-flex min-h-11 items-center justify-center rounded-full border border-primary-foreground/40 px-5 py-2 text-sm font-bold text-primary-foreground transition-colors hover:border-primary-foreground hover:bg-primary-foreground hover:text-primary; }
@@ -164,6 +162,7 @@
 .preloader-word { @apply flex overflow-hidden font-serif text-lg uppercase tracking-[0.35em] text-primary-foreground/80; }
 .preloader-word span { display: inline-block; animation: preloader-letter 0.5s ease both; }
 
+@keyframes hero-slide { 0% { opacity: 0; transform: scale(1); } 6% { opacity: 1; } 25% { opacity: 1; } 31% { opacity: 0; transform: scale(1.12); } 100% { opacity: 0; transform: scale(1.12); } }
 @keyframes halloween-float { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-12px) rotate(3deg); } }
 @keyframes halloween-flutter { 0%, 100% { transform: translate(0, 0) rotate(-4deg); } 50% { transform: translate(-10px, 8px) rotate(4deg); } }
 @keyframes preloader-in { from { opacity: 0; } to { opacity: 1; } }
@@ -176,5 +175,7 @@
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
   .preloader-ring { animation-duration: 1.4s; }
   .halloween-item { animation: none; }
+  .hero-slide { animation: none; }
+  .hero-slide:first-child { opacity: 1; }
   .preloader-glyph, .preloader-word span { animation: none; opacity: 1; transform: none; }
 }

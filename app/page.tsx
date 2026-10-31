@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import { fullAddress, restaurant } from '@/config/restaurant'
 import { HalloweenDeco } from '@/components/halloween-deco'
+import { HeroSlideshow } from '@/components/hero-slideshow'
 
 const featuredDishes = [
   {
@@ -66,10 +67,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }} />
       <main id="accueil">
         <section className="hero-section">
-          <div className="hero-bg" aria-hidden="true">
-            <Image src="/images/racine/hero-spread.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
-          </div>
-          <span className="hero-glyph" aria-hidden="true">R</span>
+          <HeroSlideshow />
           <HalloweenDeco />
           <div className="hero-copy">
             <p className="eyebrow eyebrow-light">Cuisine fusion créole · Laval</p>
